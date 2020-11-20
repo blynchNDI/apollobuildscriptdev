@@ -10,7 +10,7 @@
 
 ## Introduction
 
-This is a bash build script for rebuilding an Apollo instance, designed for use with CodeDeploy to deploy an updated version of the Apollo application. Given this intended use-case the script is not designed for deploying a fresh copy of Apollo, which requires a number of simple one-time installation and setup steps that it would be inefficient to repeatedly run for every update. Note that the script requires a certain [installation standard](#required-setup), such as a specific file path that the application is installed at; however, the script can be easily modified for different configurations as needed. The script has two components: the .yml config file, appspec.yml, and the two bash script files, moveconfig.sh and buildapollo.sh.
+This is a bash build script for rebuilding an Apollo instance, designed for use with CodeDeploy to deploy an updated version of the Apollo application. Given this intended use-case the script is not designed for deploying a fresh copy of Apollo, which requires a number of simple one-time installation and setup steps that it would be inefficient to repeatedly run for every update. Note that the script requires a certain [installation standard](#required-setup), such as a specific file path that the application is installed at; however, the script can be easily modified for different configurations as needed. The script has two components: the .yml config file, appspec.yml, and the two bash script files, prebuild.sh and buildapollo.sh.
 
 
 ## Components
@@ -19,9 +19,9 @@ This is a bash build script for rebuilding an Apollo instance, designed for use 
 
 The appspec.yml file is a short configuration file that provides the information specifying the OS it will be deployed on, where to deploy the code, and which scripts to run in what order. Note that CodeDeploy will only work successfully if it is located in the top most directory. See below in the Usage section for more details on the deployment.
 
-### moveconfig.sh and buildapollo.sh
+### prebuild.sh and buildapollo.sh
 
-The moveconfig.sh and buildapollo.sh files are the two scripts for deploying Apollo. The moveconfig.sh file runs before deployment and copies the settings.ini file up a directory so that it is not overwritten on deployment. The buildapollo.sh file copies back the settings file and deploys the application. In order to completely ensure that the docker containers are rebuilt from the new version of the code and not from the existing images, the script removes all existing docker images. All application data in the database is kept in Docker volumes which are not touched, so no data is lost and the application will redeploy with all of the same data it had previously.
+The prebuild.sh and buildapollo.sh files are the two scripts for deploying Apollo. The prebuild.sh file runs before deployment, stopping the application and then copying the settings.ini file up a directory so that it is not overwritten on deployment. The buildapollo.sh file copies back the settings file and deploys the application. In order to completely ensure that the docker containers are rebuilt from the new version of the code and not from the existing images, the script removes all existing docker images. All application data in the database is kept in Docker volumes which are not touched, so no data is lost and the application will redeploy with all of the same data it had previously.
 
 ## Required Setup
 
