@@ -2,16 +2,12 @@
   <a href="https://www.ndi.org/"><img src="https://www.ndi.org/sites/all/themes/ndi/images/NDI_logo_svg.svg" alt="NDI Logo" width="200"></a>
 </h1>
 
-<h1 align="center">
-  https://www.ndi.org
-</h1>
-<p align="center">
-  [Introduction](#introduction)
-  [Components](#components)
-  [Required Setup](#required-setup)
-  [Usage](#usage)
-  [Authors](#authors)
-</p>
+### Table of Contents
+1. [Introduction](#introduction)
+1. [Components](#components)
+1. [Required Setup](#required-setup)
+1. [Usage](#usage)
+1. [Authors](#authors)
 
 ## Introduction
 
@@ -38,6 +34,4 @@ These scripts are intended for use for CodeDeploy as part of a CodePipeline. The
 
 
 ## Authors
-
-* <b>NDI</b>
-    > Ben Lynch &nbsp;&middot;&nbsp;
+* Ben Lynch &nbsp;&middot;&nbsp;
