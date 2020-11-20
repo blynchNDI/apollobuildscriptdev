@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd /home/ubuntu/apollo
-docker-compose down
+sudo docker-compose down
 mv settings.ini ../
