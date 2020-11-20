@@ -1,0 +1,9 @@
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /home/ubuntu/dev-elections
+hooks:
+  AfterInstall:
+    - location: buildapollo.sh
+      timeout: 10000
