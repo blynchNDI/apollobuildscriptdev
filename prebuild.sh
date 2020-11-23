@@ -2,5 +2,5 @@
 
 cd /home/ubuntu/apollo
 sudo docker-compose down
-rm ../setting.ini
-mv settings.ini ../
+rm /home/ubuntu/settings.ini
+mv /home/ubuntu/apollo/settings.ini /home/ubuntu/
