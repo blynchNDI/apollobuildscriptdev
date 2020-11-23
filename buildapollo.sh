@@ -1,8 +1,8 @@
 #!/bin/bash
 
 cd /home/ubuntu/apollo/
-rm settings.ini
-cp ../setting.ini ./
+rm /home/ubuntu/apollo/settings.ini
+cp /home/ubuntu/settings.ini /home/ubuntu/apollo/settings.ini
 sudo docker rmi -f $(sudo docker images -a -q)
 #sudo chown -R ubuntu:ubuntu ./
 #sudo chmod +x ./manage.py
