@@ -4,7 +4,4 @@ cd /home/ubuntu/apollo/
 rm /home/ubuntu/apollo/settings.ini
 cp /home/ubuntu/settings.ini /home/ubuntu/apollo/settings.ini
 sudo docker rmi -f $(sudo docker images -a -q)
-#sudo chown -R ubuntu:ubuntu ./
-#sudo chmod +x ./manage.py
-#Builds Apollo
 sudo docker-compose up -d --force-recreate --renew-anon-volumes
